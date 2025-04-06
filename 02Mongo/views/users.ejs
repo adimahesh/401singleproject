@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100%;
+            height: 100vh;
+            padding: 5px;
+        }
+
+        body {
+            background-color: rgba(0, 0, 0, 0.87);
+        }
+       .users{
+        margin-top: 10px;
+        display: flex;
+        gap: 6px;
+        flex-wrap: wrap;
+       }
+        .user {
+            width: 160px;
+            min-height: 35vh;
+             background-color: rgba(19, 17, 17, 0.475);
+          padding: 10px;   
+          border-radius: 10px; 
+          /* overflow: hidden; */
+        }
+        .user img{
+            width: 140px;
+            height: 100px;
+            display: flex;
+            margin: auto;
+            object-fit: cover;
+            background-color: rgba(147, 140, 140, 0.08);
+            border: none;
+            border-radius: 10px;
+        }
+        p{
+            color: white;
+            overflow-wrap: break-word;
+        }
+        .func{
+            margin-top: 45px;
+            display: flex;
+            justify-content: space-between;
+        }
+        a{
+            text-decoration: none;
+            color: blue;
+            
+        }
+    </style>
+</head>
+
+<body>
+    <a href="/">Back to home</a>
+    <h1 style="color:white; margin-top: 12px;">All Users</h1>
+    <div class="users">
+        <% users.forEach((user)=>{ %>
+        <div class="user">
+        <img src=<%= user.image %>>
+        <p style="margin-top: 6px;"><%=user.name%></p>
+        <p style="opacity: 0.5;"><%=user.email%></p>
+        <div class="func">
+            <a href="/edit/<%=user._id%>">edit user </a>
+            <a href="/delete/<%=user._id%>"   style="color: red;">Delete user</a>
+        </div>
+        </div>
+        <% }) %>
+                
+    </div>
+</body>
+
+</html>

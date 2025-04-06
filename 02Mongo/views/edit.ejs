@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         body{
+            background-color: rgba(0, 0, 0, 0.87);
+        }
+        input{
+          background-color: rgba(0, 0, 0, 0.87);
+           border-radius: 10px;
+           border: none;
+           padding: 10px;
+           color: white;
+        }
+        #btn{
+           background-color: blue;
+           color: white; 
+           border-radius: 10px;
+        }
+        a{
+            text-decoration: none;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1 style="color: white;">Update User</h1>
+    <div class="container">
+        <form action="/edit/<%=user._id  %>" method="post">
+        <input type="text" placeholder="name" name="username" value=<%= user.name%>>
+        <input type="email" placeholder="email" name="email" value= <%= user.email%>>
+        <input type="text" placeholder="image url.." name="url" value= <%= user.image%> >
+        <input type="submit" id="btn">
+    </form>
+    </div>
+</body>
+</html>
